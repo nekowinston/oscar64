@@ -1,0 +1,112 @@
+sections
+0880 - 193e : DATA, code
+193e - 195a : DATA, data
+195a - 195a : BSS, bss
+1960 - 9000 : HEAP, heap
+9000 - 9ff0 : STACK, stack
+00f7 - 00f7 : ZEROPAGE, zeropage
+0801 - 0853 : DATA, startup
+a000 - a000 : SSTACK, sstack
+a000 - a000 : SSTACK, exit@stack
+a000 - a000 : SSTACK, assert@stack
+a000 - a000 : SSTACK, test_char_fit@stack
+a000 - a000 : SSTACK, test_char_cross@stack
+a000 - a000 : SSTACK, test_word_fit@stack
+9ffa - a000 : SSTACK, test_word_cross@stack
+a000 - a000 : SSTACK, test_dword_fit@stack
+9ff0 - a000 : SSTACK, test_dword_cross@stack
+a000 - a000 : SSTACK, test_char_signed@stack
+9ffc - a000 : SSTACK, test_word_signed@stack
+a000 - a000 : SSTACK, test_inc_char_fit@stack
+9ffd - a000 : SSTACK, test_inc_char_cross@stack
+9ffd - a000 : SSTACK, test_add_char_cross@stack
+9ffe - a000 : SSTACK, test_add_word_fit@stack
+9ffa - a000 : SSTACK, test_add_word_cross@stack
+9ff0 - 9ff0 : SSTACK, main@stack
+
+regions
+00f7 - 00ff : 0000, 0000, zeropage
+0801 - 0880 : 0853, 0052, startup
+0880 - 9000 : 195a, 10da, main
+
+objects
+00f7 - 00f7 : ZeroEnd, END:zeropage
+00f7 - 00f7 : ZeroStart, START:zeropage
+0801 - 0853 : startup, NATIVE_CODE:startup
+0880 - 08ae : main, NATIVE_CODE:code
+08ae - 0927 : test_char_fit, NATIVE_CODE:code
+0927 - 0935 : assert, NATIVE_CODE:code
+0935 - 094a : exit, NATIVE_CODE:code
+094a - 0ac8 : test_char_cross, NATIVE_CODE:code
+0ac8 - 0b41 : test_word_fit, NATIVE_CODE:code
+0b41 - 0d40 : test_word_cross, NATIVE_CODE:code
+0d40 - 0db9 : test_dword_fit, NATIVE_CODE:code
+0db9 - 1034 : test_dword_cross, NATIVE_CODE:code
+1034 - 10d2 : test_char_signed, NATIVE_CODE:code
+10d2 - 136c : test_word_signed, NATIVE_CODE:code
+136c - 1403 : test_inc_char_fit, NATIVE_CODE:code
+1403 - 1526 : test_inc_char_cross, NATIVE_CODE:code
+1526 - 1690 : test_add_char_cross, NATIVE_CODE:code
+1690 - 1751 : test_add_word_fit, NATIVE_CODE:code
+1751 - 1908 : test_add_word_cross, NATIVE_CODE:code
+1908 - 193e : mul32by8, NATIVE_CODE:code
+193e - 193f : spentry, DATA:data
+193f - 1940 : a, DATA:data
+1940 - 1943 : b, DATA:data
+1943 - 1944 : c, DATA:data
+1944 - 1949 : d, DATA:data
+1949 - 194a : e, DATA:data
+194a - 1954 : f, DATA:data
+1954 - 1955 : g, DATA:data
+1955 - 195a : h, DATA:data
+195a - 195a : BSSStart, START:bss
+195a - 195a : BSSEnd, END:bss
+9ff0 - 9ff0 : StackEnd, END:stack
+9ff0 - a000 : test_dword_cross@stack, BSS:test_dword_cross@stack
+9ffa - 9fff : di, BSS:test_add_word_cross@stack
+9ffa - a000 : test_word_cross@stack, BSS:test_word_cross@stack
+9ffc - a000 : test_word_signed@stack, BSS:test_word_signed@stack
+9ffd - a000 : bi, BSS:test_add_char_cross@stack
+9ffd - a000 : bi, BSS:test_inc_char_cross@stack
+9ffe - 9fff : ci, BSS:test_add_word_fit@stack
+
+objects by size
+10d2 (029a) : test_word_signed, NATIVE_CODE:code
+0db9 (027b) : test_dword_cross, NATIVE_CODE:code
+0b41 (01ff) : test_word_cross, NATIVE_CODE:code
+1751 (01b7) : test_add_word_cross, NATIVE_CODE:code
+094a (017e) : test_char_cross, NATIVE_CODE:code
+1526 (016a) : test_add_char_cross, NATIVE_CODE:code
+1403 (0123) : test_inc_char_cross, NATIVE_CODE:code
+1690 (00c1) : test_add_word_fit, NATIVE_CODE:code
+1034 (009e) : test_char_signed, NATIVE_CODE:code
+136c (0097) : test_inc_char_fit, NATIVE_CODE:code
+08ae (0079) : test_char_fit, NATIVE_CODE:code
+0ac8 (0079) : test_word_fit, NATIVE_CODE:code
+0d40 (0079) : test_dword_fit, NATIVE_CODE:code
+0801 (0052) : startup, NATIVE_CODE:startup
+1908 (0036) : mul32by8, NATIVE_CODE:code
+0880 (002e) : main, NATIVE_CODE:code
+0935 (0015) : exit, NATIVE_CODE:code
+9ff0 (0010) : test_dword_cross@stack, BSS:test_dword_cross@stack
+0927 (000e) : assert, NATIVE_CODE:code
+194a (000a) : f, DATA:data
+9ffa (0006) : test_word_cross@stack, BSS:test_word_cross@stack
+1944 (0005) : d, DATA:data
+1955 (0005) : h, DATA:data
+9ffa (0005) : di, BSS:test_add_word_cross@stack
+9ffc (0004) : test_word_signed@stack, BSS:test_word_signed@stack
+1940 (0003) : b, DATA:data
+9ffd (0003) : bi, BSS:test_add_char_cross@stack
+9ffd (0003) : bi, BSS:test_inc_char_cross@stack
+193e (0001) : spentry, DATA:data
+193f (0001) : a, DATA:data
+1943 (0001) : c, DATA:data
+1949 (0001) : e, DATA:data
+1954 (0001) : g, DATA:data
+9ffe (0001) : ci, BSS:test_add_word_fit@stack
+00f7 (0000) : ZeroEnd, END:zeropage
+00f7 (0000) : ZeroStart, START:zeropage
+195a (0000) : BSSStart, START:bss
+195a (0000) : BSSEnd, END:bss
+9ff0 (0000) : StackEnd, END:stack

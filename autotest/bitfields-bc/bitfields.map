@@ -1,0 +1,207 @@
+sections
+0a00 - 1ffa : DATA, code
+1ffa - 2016 : DATA, data
+2016 - 2016 : BSS, bss
+2018 - 9000 : HEAP, heap
+9000 - a000 : STACK, stack
+00f7 - 00f7 : ZEROPAGE, zeropage
+0801 - 087a : DATA, startup
+0900 - 0900 : DATA, bytecode
+a000 - a000 : SSTACK, sstack
+
+regions
+00f7 - 00ff : 0000, 0000, zeropage
+0801 - 0900 : 087a, 0079, startup
+0900 - 0a00 : 0900, 0000, bytecode
+0a00 - 9000 : 2016, 1616, main
+
+objects
+00f7 - 00f7 : ZeroEnd, END:zeropage
+00f7 - 00f7 : ZeroStart, START:zeropage
+0801 - 087a : startup, NATIVE_CODE:startup
+0900 - 0900 : bytecode, RUNTIME:bytecode
+0a00 - 0a38 : main, BYTE_CODE:code
+0a38 - 0ae8 : test_char_fit, BYTE_CODE:code
+0ae8 - 0b00 : assert, BYTE_CODE:code
+0b00 - 0b0b : exit, BYTE_CODE:code
+0b0b - 0b20 : *, NATIVE_CODE:code
+0b20 - 0c93 : test_char_cross, BYTE_CODE:code
+0c93 - 0d43 : test_word_fit, BYTE_CODE:code
+0d43 - 0eab : test_word_cross, BYTE_CODE:code
+0eab - 0f69 : test_dword_fit, BYTE_CODE:code
+0f69 - 1158 : test_dword_cross, BYTE_CODE:code
+1158 - 1221 : test_char_signed, BYTE_CODE:code
+1221 - 1379 : test_word_signed, BYTE_CODE:code
+1379 - 143c : test_inc_char_fit, BYTE_CODE:code
+143c - 1591 : test_inc_char_cross, BYTE_CODE:code
+1591 - 16fa : test_add_char_cross, BYTE_CODE:code
+16fa - 16fd : *, DATA:code
+16fd - 17e1 : test_add_word_fit, BYTE_CODE:code
+17e1 - 192b : test_add_word_cross, BYTE_CODE:code
+192b - 1930 : *, DATA:code
+1930 - 193d : inp_op_ext_s16, NATIVE_CODE:code
+193d - 1944 : inp_op_ext_u16, NATIVE_CODE:code
+1944 - 195d : inp_op_andr_32, NATIVE_CODE:code
+195d - 1976 : inp_op_orr_32, NATIVE_CODE:code
+1976 - 19d1 : inp_op_mulr_32, NATIVE_CODE:code
+19d1 - 19e7 : inp_op_shl_l32, NATIVE_CODE:code
+19e7 - 19fd : inp_op_shr_u32, NATIVE_CODE:code
+19fd - 1a2e : inp_op_cmp_u32, NATIVE_CODE:code
+1a2e - 1a31 : inp_nop, NATIVE_CODE:code
+1a31 - 1a3c : inp_const_8, NATIVE_CODE:code
+1a3c - 1a4b : inp_const_p8, NATIVE_CODE:code
+1a4b - 1a5a : inp_const_n8, NATIVE_CODE:code
+1a5a - 1a6a : inp_const_16, NATIVE_CODE:code
+1a6a - 1a84 : inp_const_32, NATIVE_CODE:code
+1a84 - 1a92 : inp_load_reg_8, NATIVE_CODE:code
+1a92 - 1a9c : inp_store_reg_8, NATIVE_CODE:code
+1a9c - 1aaa : inp_load_reg_16, NATIVE_CODE:code
+1aaa - 1ab8 : inp_store_reg_16, NATIVE_CODE:code
+1ab8 - 1ace : inp_load_reg_32, NATIVE_CODE:code
+1ace - 1ae4 : inp_store_reg_32, NATIVE_CODE:code
+1ae4 - 1b08 : inp_load_abs_8, NATIVE_CODE:code
+1b08 - 1b30 : inp_load_abs_u8, NATIVE_CODE:code
+1b30 - 1b59 : inp_load_abs_16, NATIVE_CODE:code
+1b59 - 1b8c : inp_load_abs_32, NATIVE_CODE:code
+1b8c - 1bb0 : inp_store_abs_8, NATIVE_CODE:code
+1bb0 - 1bd9 : inp_store_abs_16, NATIVE_CODE:code
+1bd9 - 1c0c : inp_store_abs_32, NATIVE_CODE:code
+1c0c - 1c1c : inp_lea_abs, NATIVE_CODE:code
+1c1c - 1c2c : inp_load_local_8, NATIVE_CODE:code
+1c2c - 1c40 : inp_load_local_u8, NATIVE_CODE:code
+1c40 - 1c55 : inp_load_local_16, NATIVE_CODE:code
+1c55 - 1c65 : inp_store_local_8, NATIVE_CODE:code
+1c65 - 1c7a : inp_store_local_16, NATIVE_CODE:code
+1c7a - 1c8f : inp_lea_local, NATIVE_CODE:code
+1c8f - 1ca1 : inp_binop_orr_16, NATIVE_CODE:code
+1ca1 - 1cb6 : inp_binop_addi_16, NATIVE_CODE:code
+1cb6 - 1ccb : inp_binop_subi_16, NATIVE_CODE:code
+1ccb - 1cdf : inp_binop_andi_16, NATIVE_CODE:code
+1cdf - 1cf3 : inp_binop_ori_16, NATIVE_CODE:code
+1cf3 - 1d01 : inp_binop_addi_8, NATIVE_CODE:code
+1d01 - 1d0e : inp_binop_andi_8, NATIVE_CODE:code
+1d0e - 1d1b : inp_binop_ori_8, NATIVE_CODE:code
+1d1b - 1d35 : inp_binop_shl_16, NATIVE_CODE:code
+1d35 - 1d4f : inp_binop_shr_u16, NATIVE_CODE:code
+1d4f - 1d6b : inp_binop_shr_s16, NATIVE_CODE:code
+1d6b - 1dcd : cmp16, NATIVE_CODE:code
+1dcd - 1e19 : cmp8, NATIVE_CODE:code
+1e19 - 1e28 : inp_op_invert_16, NATIVE_CODE:code
+1e28 - 1e38 : inp_conv_s8_s16, NATIVE_CODE:code
+1e38 - 1e8a : bra, NATIVE_CODE:code
+1e8a - 1ed8 : braf, NATIVE_CODE:code
+1ed8 - 1ef3 : inp_jsr, NATIVE_CODE:code
+1ef3 - 1f13 : inp_native, NATIVE_CODE:code
+1f13 - 1f4c : inp_enter, NATIVE_CODE:code
+1f4c - 1f86 : inp_return, NATIVE_CODE:code
+1f86 - 1faa : inp_call, NATIVE_CODE:code
+1faa - 1fbb : inp_push_frame, NATIVE_CODE:code
+1fbb - 1fcc : inp_pop_frame, NATIVE_CODE:code
+1fcc - 1fe4 : inp_copy, NATIVE_CODE:code
+1fe4 - 1ffa : inp_op_extrt, NATIVE_CODE:code
+1ffa - 1ffb : spentry, DATA:data
+1ffb - 1ffc : a, DATA:data
+1ffc - 1fff : b, DATA:data
+1fff - 2000 : c, DATA:data
+2000 - 2005 : d, DATA:data
+2005 - 2006 : e, DATA:data
+2006 - 2010 : f, DATA:data
+2010 - 2011 : g, DATA:data
+2011 - 2016 : h, DATA:data
+2016 - 2016 : BSSEnd, END:bss
+2016 - 2016 : BSSStart, START:bss
+a000 - a000 : StackEnd, END:stack
+
+objects by size
+0f69 (01ef) : test_dword_cross, BYTE_CODE:code
+0b20 (0173) : test_char_cross, BYTE_CODE:code
+1591 (0169) : test_add_char_cross, BYTE_CODE:code
+0d43 (0168) : test_word_cross, BYTE_CODE:code
+1221 (0158) : test_word_signed, BYTE_CODE:code
+143c (0155) : test_inc_char_cross, BYTE_CODE:code
+17e1 (014a) : test_add_word_cross, BYTE_CODE:code
+16fd (00e4) : test_add_word_fit, BYTE_CODE:code
+1158 (00c9) : test_char_signed, BYTE_CODE:code
+1379 (00c3) : test_inc_char_fit, BYTE_CODE:code
+0eab (00be) : test_dword_fit, BYTE_CODE:code
+0a38 (00b0) : test_char_fit, BYTE_CODE:code
+0c93 (00b0) : test_word_fit, BYTE_CODE:code
+0801 (0079) : startup, NATIVE_CODE:startup
+1d6b (0062) : cmp16, NATIVE_CODE:code
+1976 (005b) : inp_op_mulr_32, NATIVE_CODE:code
+1e38 (0052) : bra, NATIVE_CODE:code
+1e8a (004e) : braf, NATIVE_CODE:code
+1dcd (004c) : cmp8, NATIVE_CODE:code
+1f4c (003a) : inp_return, NATIVE_CODE:code
+1f13 (0039) : inp_enter, NATIVE_CODE:code
+0a00 (0038) : main, BYTE_CODE:code
+1b59 (0033) : inp_load_abs_32, NATIVE_CODE:code
+1bd9 (0033) : inp_store_abs_32, NATIVE_CODE:code
+19fd (0031) : inp_op_cmp_u32, NATIVE_CODE:code
+1b30 (0029) : inp_load_abs_16, NATIVE_CODE:code
+1bb0 (0029) : inp_store_abs_16, NATIVE_CODE:code
+1b08 (0028) : inp_load_abs_u8, NATIVE_CODE:code
+1ae4 (0024) : inp_load_abs_8, NATIVE_CODE:code
+1b8c (0024) : inp_store_abs_8, NATIVE_CODE:code
+1f86 (0024) : inp_call, NATIVE_CODE:code
+1ef3 (0020) : inp_native, NATIVE_CODE:code
+1d4f (001c) : inp_binop_shr_s16, NATIVE_CODE:code
+1ed8 (001b) : inp_jsr, NATIVE_CODE:code
+1a6a (001a) : inp_const_32, NATIVE_CODE:code
+1d1b (001a) : inp_binop_shl_16, NATIVE_CODE:code
+1d35 (001a) : inp_binop_shr_u16, NATIVE_CODE:code
+1944 (0019) : inp_op_andr_32, NATIVE_CODE:code
+195d (0019) : inp_op_orr_32, NATIVE_CODE:code
+0ae8 (0018) : assert, BYTE_CODE:code
+1fcc (0018) : inp_copy, NATIVE_CODE:code
+19d1 (0016) : inp_op_shl_l32, NATIVE_CODE:code
+19e7 (0016) : inp_op_shr_u32, NATIVE_CODE:code
+1ab8 (0016) : inp_load_reg_32, NATIVE_CODE:code
+1ace (0016) : inp_store_reg_32, NATIVE_CODE:code
+1fe4 (0016) : inp_op_extrt, NATIVE_CODE:code
+1c40 (0015) : inp_load_local_16, NATIVE_CODE:code
+1c65 (0015) : inp_store_local_16, NATIVE_CODE:code
+1c7a (0015) : inp_lea_local, NATIVE_CODE:code
+1ca1 (0015) : inp_binop_addi_16, NATIVE_CODE:code
+1cb6 (0015) : inp_binop_subi_16, NATIVE_CODE:code
+1c2c (0014) : inp_load_local_u8, NATIVE_CODE:code
+1ccb (0014) : inp_binop_andi_16, NATIVE_CODE:code
+1cdf (0014) : inp_binop_ori_16, NATIVE_CODE:code
+1c8f (0012) : inp_binop_orr_16, NATIVE_CODE:code
+1faa (0011) : inp_push_frame, NATIVE_CODE:code
+1fbb (0011) : inp_pop_frame, NATIVE_CODE:code
+1a5a (0010) : inp_const_16, NATIVE_CODE:code
+1c0c (0010) : inp_lea_abs, NATIVE_CODE:code
+1c1c (0010) : inp_load_local_8, NATIVE_CODE:code
+1c55 (0010) : inp_store_local_8, NATIVE_CODE:code
+1e28 (0010) : inp_conv_s8_s16, NATIVE_CODE:code
+1a3c (000f) : inp_const_p8, NATIVE_CODE:code
+1a4b (000f) : inp_const_n8, NATIVE_CODE:code
+1e19 (000f) : inp_op_invert_16, NATIVE_CODE:code
+1a84 (000e) : inp_load_reg_8, NATIVE_CODE:code
+1a9c (000e) : inp_load_reg_16, NATIVE_CODE:code
+1aaa (000e) : inp_store_reg_16, NATIVE_CODE:code
+1cf3 (000e) : inp_binop_addi_8, NATIVE_CODE:code
+1930 (000d) : inp_op_ext_s16, NATIVE_CODE:code
+1d01 (000d) : inp_binop_andi_8, NATIVE_CODE:code
+1d0e (000d) : inp_binop_ori_8, NATIVE_CODE:code
+0b00 (000b) : exit, BYTE_CODE:code
+1a31 (000b) : inp_const_8, NATIVE_CODE:code
+1a92 (000a) : inp_store_reg_8, NATIVE_CODE:code
+2006 (000a) : f, DATA:data
+193d (0007) : inp_op_ext_u16, NATIVE_CODE:code
+2000 (0005) : d, DATA:data
+2011 (0005) : h, DATA:data
+1a2e (0003) : inp_nop, NATIVE_CODE:code
+1ffc (0003) : b, DATA:data
+1ffa (0001) : spentry, DATA:data
+1ffb (0001) : a, DATA:data
+1fff (0001) : c, DATA:data
+2005 (0001) : e, DATA:data
+2010 (0001) : g, DATA:data
+00f7 (0000) : ZeroEnd, END:zeropage
+00f7 (0000) : ZeroStart, START:zeropage
+0900 (0000) : bytecode, RUNTIME:bytecode
+2016 (0000) : BSSEnd, END:bss
+2016 (0000) : BSSStart, START:bss
+a000 (0000) : StackEnd, END:stack
